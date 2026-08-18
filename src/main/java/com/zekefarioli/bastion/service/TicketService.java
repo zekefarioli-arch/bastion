@@ -13,7 +13,7 @@ public class TicketService {
     private final List<Ticket> tickets = new ArrayList<>();
     private long nextId = 1;
 
-    public Ticket creaTicket(String title, String description, User owner) {
+    public Ticket createTicket(String title, String description, User owner) {
         Ticket ticket = new Ticket(nextId, title, description, TicketStatus.OPEN, owner, Instant.now());
         nextId = nextId + 1;
         tickets.add(ticket);
