@@ -1,4 +1,4 @@
-package com.zekefarioli.bastion;
+package com.zekefarioli.bastion.model;
 
 public class User {
     private final Long id;

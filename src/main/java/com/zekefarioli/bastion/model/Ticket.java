@@ -1,4 +1,4 @@
-package com.zekefarioli.bastion;
+package com.zekefarioli.bastion.model;
 
 import java.time.Instant;
 
