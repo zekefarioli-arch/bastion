@@ -44,11 +44,11 @@ dependencies with `new`).
 - [x] Project setup with Spring Initializr (Java 21 LTS, Maven, Spring Web)
 - [x] First `@RestController` responding over HTTP
 - [x] Git + GitHub connected
-- [ ] `User` entity
-- [ ] `Ticket` entity, with `status` as an enum
-- [ ] `TicketService` with in-memory storage
-- [ ] `TicketController` using the service via dependency injection
-- [ ] Manual testing with curl / browser
+- [x] `User` entity
+- [x] `Ticket` entity, with `status` as an enum
+- [x] `TicketService` with in-memory storage
+- [x] `TicketController` using the service via dependency injection
+- [x] Manual testing with curl / browser
 - [ ] Unit tests
 - [ ] Persistence with Spring Data JPA
 - [ ] `UserController`
