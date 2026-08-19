@@ -3,6 +3,8 @@ package com.zekefarioli.bastion.service;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+
 import org.springframework.stereotype.Service;
 import com.zekefarioli.bastion.model.Ticket;
 import com.zekefarioli.bastion.model.TicketStatus;
@@ -22,5 +24,15 @@ public class TicketService {
 
     public List<Ticket> findAll() {
         return tickets;
+    }
+
+    public Ticket updateStatus(long id, TicketStatus newStatus) {
+        Ticket ticket = tickets.stream()
+                .filter(t -> t.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new NoSuchElementException("Ticket not found: " + id));
+
+        ticket.setStatus(newStatus);
+        return ticket;
     }
 }

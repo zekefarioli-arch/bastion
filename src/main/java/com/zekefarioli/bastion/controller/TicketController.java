@@ -3,12 +3,15 @@ package com.zekefarioli.bastion.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zekefarioli.bastion.dto.CreateTicketRequest;
 import com.zekefarioli.bastion.model.Ticket;
+import com.zekefarioli.bastion.model.TicketStatus;
 import com.zekefarioli.bastion.service.TicketService;
 
 @RestController
@@ -26,8 +29,12 @@ public class TicketController {
 
     @PostMapping("/tickets")
     public Ticket createTicket(@RequestBody CreateTicketRequest ticketDTO) {
-        Ticket ticket = ticketService.createTicket(ticketDTO.title(), ticketDTO.description(), null);
-        return ticket;
+        return ticketService.createTicket(ticketDTO.title(), ticketDTO.description(), null);
+    }
+
+    @PutMapping("/tickets/{id}")
+    public Ticket updateTicketStatus(@PathVariable long id, @RequestBody TicketStatus newStatus) {
+        return ticketService.updateStatus(id, newStatus);
     }
 
 }
