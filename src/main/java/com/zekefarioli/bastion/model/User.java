@@ -1,9 +1,21 @@
 package com.zekefarioli.bastion.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class User {
-    private final Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String email;
+
+    protected User() {
+
+    }
 
     public User(Long id, String name, String email) {
         this.id = id;
