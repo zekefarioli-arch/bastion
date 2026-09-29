@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 
-import com.zekefarioli.bastion.model.TicketStatus;
 import com.zekefarioli.bastion.model.User;
 import com.zekefarioli.bastion.repository.UserRepository;
 
